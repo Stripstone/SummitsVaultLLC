@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     });
-
+    
+/* DEPRECATED
     // --- CONTACT FORM LOGIC ---
     document.getElementById("contact-form").addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -62,5 +63,5 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("There was an error sending your message. Please try again later.");
         }
     });
-
+*/
 });
