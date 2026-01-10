@@ -42,6 +42,7 @@ ${message}
       body: JSON.stringify({ success: true })
     };
   } catch (err) {
+    console.error("Email failed to send:", err); // Log the specific error details for debugging
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Email failed" })
