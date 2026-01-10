@@ -34,28 +34,21 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     
-/* DEPRECATED
     // --- CONTACT FORM LOGIC ---
     document.getElementById("contact-form").addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const data = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            subject: document.getElementById("subject").value,
-            message: document.getElementById("message").value
-        };
+        const formData = new FormData(e.target);
 
         try {
-            const response = await fetch("/.netlify/functions/send-email", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
+            const response = await fetch("https://formsubmit.co/info@summitsvault.com", {
+                method: "POST",
+                body: formData  // Changed from JSON
             });
 
             if (response.ok) {
-            alert("Message sent successfully. Thank you for contacting SummitsVault.");
-            e.target.reset();
+                alert("Message sent successfully. Thank you for contacting SummitsVault.");
+                e.target.reset();
             } else {
                 alert("There was an error sending your message. Please try again later.");
             }
@@ -63,5 +56,4 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("There was an error sending your message. Please try again later.");
         }
     });
-*/
 });
