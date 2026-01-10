@@ -15,6 +15,7 @@ exports.handler = async (event) => {
     host: process.env.MAILGUN_SMTP_SERVER,
     port: process.env.MAILGUN_SMTP_PORT,
     secure: false,
+    requireTLS: true,  // ← MISSING - Forces STARTTLS
     auth: {
       user: process.env.MAILGUN_SMTP_LOGIN,
       pass: process.env.MAILGUN_SMTP_PASSWORD
